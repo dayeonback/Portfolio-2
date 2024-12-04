@@ -32,7 +32,7 @@ const Header = ({ type = 'type1', title, sharing, prev }) => {
                   <button
                     type="button"
                     onClick={() => setMobileMenuOpen(true)}
-                    className="-m-2.5 inline-flex items-center justify-center rounded-md text-gray-500"
+                    className="-m-2.5 inline-flex items-center justify-center rounded-md text-white"
                   >
                     <span className="sr-only">Open main menu</span>
                     <Bars3Icon aria-hidden="true" className="size-11" />

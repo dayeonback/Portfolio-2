@@ -22,14 +22,15 @@ export default function Hero() {
         loop
       ></video>
       <div className="pt-32 h-screen relative text-center">
-        <h1 className="flex justify-center text-balance text-8xl tracking-wide opacity-0 animate-fade-in font-extrabold text-white sm:text-5xl max-w-4xl mt-0 mb-[0.5rem] z-10">
+        <h1 className="flex justify-center text-balance text-8xl tracking-wide animate-fade-up font-extrabold text-white sm:text-5xl max-w-4xl mt-0 mb-[0.5rem] z-10">
           Bliss.
         </h1>
-        <p className="mb-[43rem] text-lg tracking-tight text-center z-10">
+
+        <p className="mb-[43rem] text-lg tracking-tight text-center z-10 animate-fade-in">
           <span>(47° 45’ 00” N 126° 58’ 41” E)</span>
           <span className="ml-11">SEOUL</span>
         </p>
-        <p className="flex px-6 text-lg tracking-tight justify-between bottom-3 z-10">
+        <p className="flex px-6 text-lg tracking-tight justify-between bottom-12 z-10 relative">
           <span>WORLDWIDE</span>
           <span>
             ©<span>{format(new Date(), 'yyyy')}</span>
@@ -47,14 +48,13 @@ export default function Hero() {
             TO THE WORLD
           </a>
         </div>
-
-        <div className="block relative">
+        <div className="absolute left-0 right-0 top-20 text-xs text-slate-600 animate-fade-in">
           <p className="flex px-5 justify-between">
             <span>A New Horizon</span>
             <span>World Waiting</span>
             <span>Adventure Calling</span>
           </p>
-          <p>
+          <p className="flex px-5 justify-between">
             <span>Journeys Ahead</span>
             <span>Vistas Unfolding</span>
             <span>Exploring Boundaries</span>
