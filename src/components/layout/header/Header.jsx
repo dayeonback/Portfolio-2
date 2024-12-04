@@ -23,25 +23,22 @@ const Header = ({ type = 'type1', title, sharing, prev }) => {
       // 메인헤더
       case 'type1':
         return (
-          <header className="fixed top-0 left-0 right-0 z-50 bg-white-700 backdrop-blur-md flex items-center h-20">
+          <header className="fixed top-0 left-0 right-0 z-50 bg-white-700 flex items-center h-20">
             <Container size="full" className="flex justify-between items-center">
-              <div aria-label="Global" className="flex items-center justify-between lg:px-8 w-full">
-                <h1 className="flex lg:flex-1">
-                  <a href="#" className="-m-1.5 p-1.5">
-                    <span className="sr-only">Your Company</span>
-                    <Image alt="" src="/images/pattern/common/logo.svg" width={32} height={32} className="h-8 w-auto" />
-                  </a>
-                </h1>
+              <div aria-label="Global" className="flex items-center justify-between lg:px-8 w-full h-full">
+                <a href="#" className="block w-8 h-8 bg-neonBlue rounded-full" aria-label="Your Company Logo" />
+
                 <div className="flex lg:hidden">
                   <button
                     type="button"
                     onClick={() => setMobileMenuOpen(true)}
-                    className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                    className="-m-2.5 inline-flex items-center justify-center rounded-md text-gray-500"
                   >
                     <span className="sr-only">Open main menu</span>
-                    <Bars3Icon aria-hidden="true" className="size-6" />
+                    <Bars3Icon aria-hidden="true" className="size-11" />
                   </button>
                 </div>
+
                 <nav className="hidden lg:flex lg:gap-x-12">
                   {navigation.map((item) => (
                     <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
@@ -61,13 +58,7 @@ const Header = ({ type = 'type1', title, sharing, prev }) => {
                   <div className="flex items-center justify-between">
                     <a href="#" className="-m-1.5 p-1.5">
                       <span className="sr-only">Your Company</span>
-                      <Image
-                        alt=""
-                        src="/images/pattern/common/logo.svg"
-                        width={32}
-                        height={32}
-                        className="h-8 w-auto"
-                      />
+                      <a href="#" className="block w-8 h-8 bg-neonBlue rounded-full" aria-label="Your Company Logo" />
                     </a>
                     <button
                       type="button"

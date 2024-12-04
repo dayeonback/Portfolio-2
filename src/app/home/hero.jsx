@@ -13,30 +13,54 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="pt-[85px] h-svh text-center">
-      {' '}
-      {/* 헤더 높이만큼 margin-top 추가 */}
-      <h1 className="flex justify-center text-balance text-8xl tracking-wide	opacity-0 animate-fade-in font-extrabold text-#fff sm:text-5xl">
-        Bliss.
-      </h1>
-      <p>
-        <span>위도경도 표시</span>
-        <span>SEOUL</span>
-      </p>
-      <p className="flex px-6 text-lg tracking-tight	justify-between	">
-        <span>TO THE WORLD</span>
-        <span>
-          ©<span>{format(new Date(), 'yyyy')}</span>
-        </span>
-        <span>
-          {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })}
-        </span>
-      </p>
-      <div className="mt-10 flex items-center justify- gap-x-6">
-        <a href="#" className="bg-white hover:bg-#7DF9FF px-3.5 py-2.5 text-sm font-semibold text-#000 shadow-sm  ">
-          Get started
-        </a>
+    <>
+      <video
+        src="/videos/header-video1-pc.5d9f90a5.mp4"
+        className="absolute top-0 left-0 w-full h-svh object-cover z-0"
+        autoPlay
+        muted
+        loop
+      ></video>
+      <div className="pt-32 h-screen relative text-center">
+        <h1 className="flex justify-center text-balance text-8xl tracking-wide opacity-0 animate-fade-in font-extrabold text-white sm:text-5xl max-w-4xl mt-0 mb-[0.5rem] z-10">
+          Bliss.
+        </h1>
+        <p className="mb-[43rem] text-lg tracking-tight text-center z-10">
+          <span>(47° 45’ 00” N 126° 58’ 41” E)</span>
+          <span className="ml-11">SEOUL</span>
+        </p>
+        <p className="flex px-6 text-lg tracking-tight justify-between bottom-3 z-10">
+          <span>WORLDWIDE</span>
+          <span>
+            ©<span>{format(new Date(), 'yyyy')}</span>
+          </span>
+          <span>
+            {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })}
+          </span>
+        </p>
+
+        <div className="fixed -left-11 top-1/2 transform -rotate-90 -translate-y-1/2 gap-x-6 z-10">
+          <a
+            href="#"
+            className="bg-white hover:bg-neonBlue px-5 py-5 text-sm font-semibold text-black shadow-sm transition duration-300 ease-in-out"
+          >
+            TO THE WORLD
+          </a>
+        </div>
+
+        <div className="block relative">
+          <p className="flex px-5 justify-between">
+            <span>A New Horizon</span>
+            <span>World Waiting</span>
+            <span>Adventure Calling</span>
+          </p>
+          <p>
+            <span>Journeys Ahead</span>
+            <span>Vistas Unfolding</span>
+            <span>Exploring Boundaries</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

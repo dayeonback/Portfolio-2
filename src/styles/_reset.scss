@@ -58,7 +58,7 @@ q {
 blockquote {
   &:before,
   &:after {
-    content: "";
+    content: '';
     content: none;
   }
 }
@@ -66,7 +66,7 @@ blockquote {
 q {
   &:before,
   &:after {
-    content: "";
+    content: '';
     content: none;
   }
 }
@@ -97,15 +97,15 @@ body {
 
 /* 뷰표트 변환시 폰트크기 자동확대 방지 */
 input {
-  &[type="text"],
-  &[type="password"],
-  &[type="submit"],
-  &[type="search"] {
+  &[type='text'],
+  &[type='password'],
+  &[type='submit'],
+  &[type='search'] {
     appearance: none;
     border-radius: 0;
   }
 
-  &:checked[type="checkbox"] {
+  &:checked[type='checkbox'] {
     background-color: #e4e4e4;
     appearance: checkbox;
   }
@@ -117,15 +117,15 @@ button {
 }
 
 input {
-  &[type="button"],
-  &[type="submit"],
-  &[type="reset"],
-  &[type="file"] {
+  &[type='button'],
+  &[type='submit'],
+  &[type='reset'],
+  &[type='file'] {
     appearance: button;
     border-radius: 0;
   }
 
-  &[type="search"]::-webkit-search-cancel-button {
+  &[type='search']::-webkit-search-cancel-button {
     appearance: none;
   }
 }
@@ -145,8 +145,8 @@ hr {
   display: none;
 }
 
-input[type="password"] {
-  font-family: "Malgun Gothic";
+input[type='password'] {
+  font-family: 'Malgun Gothic';
 }
 
 /* 중요한 이미지 대체텍스트로 이미지off시에도 대체 텍스트를 보여주고자 할때 */
