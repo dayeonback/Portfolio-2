@@ -30,7 +30,7 @@ export default function Hero() {
           <span>(47° 45’ 00” N 126° 58’ 41” E)</span>
           <span className="ml-11">SEOUL</span>
         </p>
-        <p className="flex px-6 text-lg tracking-tight justify-between bottom-12 z-10 relative">
+        <p className="flex px-6 text-lg tracking-tight justify-between bottom-12 z-10 relative animate-fade-up">
           <span>WORLDWIDE</span>
           <span>
             ©<span>{format(new Date(), 'yyyy')}</span>
