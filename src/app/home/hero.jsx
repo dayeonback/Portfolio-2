@@ -22,7 +22,7 @@ export default function Hero() {
         loop
       ></video>
       <div className="pt-32 h-screen relative text-center">
-        <h1 className="flex justify-center text-balance text-8xl tracking-wide animate-fade-up font-extrabold text-white sm:text-5xl max-w-4xl mt-0 mb-[0.5rem] z-10">
+        <h1 className="flex justify-center text-balance text-8xl tracking-wide animate-fade-up font-extrabold text-white sm:text-5xl max-w-4xl mt-0 z-10">
           Bliss.
         </h1>
 
