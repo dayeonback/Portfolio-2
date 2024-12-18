@@ -1,25 +1,22 @@
 import Image from 'next/image';
+import Clock from '@/components/ui/Clock'; // Clock 컴포넌트 경로
+import CityText from '@/components/animations/CityText'; // CityText 컴포넌트 경로
+import TextMotion from './textMotion';
 
 export default function Bento() {
   return (
     <section className="pt-20 lg:pt-32 block px-4 lg:px-8 opacity-100">
-      <div className="mb-16 lg:mb-20 w-full relative ">
-        <div className="text-lg pl-[5rem] tracking-tight leading-4">
-          <p className="text-xl">
-            Every culture in the world has different stories and special charms. Bliss discovered cultures all over the
-            world It's a place where people can share their happiness. Food, art, traditions, and even the smallest
-            details of everyday life I would like to share value and Bliss with you.
-          </p>
+      {/* 기존 내용 */}
+      <TextMotion />
+      {/* 추가된 Clock과 CityText 섹션 */}
+      <div className="w-full flex flex-col items-center justify-center relative bg-black text-white py-20">
+        {/* Clock 컴포넌트 */}
+        <div>
+          <Clock />
         </div>
-        <div className="mt-8 font-bold text-3xl text-neonBlue">
-          <h2>Bliss : 더없는 행복</h2>
-        </div>
-        <div className="pl-[5rem] pb-5 mt-11 text-lg tracking-tight leading-4	">
-          <p className="text-xl">
-            세상의 모든 문화는 각기 다른 이야기와 특별한 매력을 품고 있습니다. 블리스는 지구 곳곳의 문화를 발견하고
-            더없는 행복을 나눌 수 있는 곳입니다. 음식, 예술, 전통, 그리고 일상 속 작은 디테일까지, 문화에 담긴 진정한
-            가치와 Bliss를 여러분과 함께 나누고자 합니다.
-          </p>
+        {/* 스크롤 애니메이션 텍스트 */}
+        <div className="overflow-hidden h-[300px] lg:h-[400px] w-full">
+          <CityText />
         </div>
       </div>
     </section>
