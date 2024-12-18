@@ -1,54 +1,78 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import React, { useEffect, useRef } from 'react';
+// import { Box, Flex, Heading } from '@chakra-ui/react';
+// import { gsap } from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import 'tailwindcss/tailwind.css';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+// gsap.registerPlugin(ScrollTrigger);
 
-// import './styles.css';
+// const Slide = () => {
+//   const sliderRef = useRef(null);
 
-// import required modules
-import { Pagination, Navigation } from 'swiper/modules';
-import { Image } from '@chakra-ui/next-js';
-import { AspectRatio } from '@chakra-ui/react';
+//   useEffect(() => {
+//     const slides = gsap.utils.toArray('.slide');
 
-export default function IntroSwiper() {
-  return (
-    <>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <AspectRatio>
-            <Image src="/images/pattern/main/intro-slide-1.jpg" alt="Picture of the author" width={1200} height={500} />
-          </AspectRatio>
-        </SwiperSlide>
-        <SwiperSlide>
-          <AspectRatio>
-          <Image src="/images/pattern/main/intro-slide-1.jpg" alt="Picture of the author" width={1200} height={500} className='w-full' />
-          </AspectRatio>
-        </SwiperSlide>
-        <SwiperSlide>
-          <AspectRatio>
-            <Image src="/images/pattern/main/intro-slide-2.jpg" alt="Picture of the author" width={1200} height={500} />
-          </AspectRatio>
-        </SwiperSlide>
-        <SwiperSlide>
-          <AspectRatio>
-          <Image src="/images/pattern/main/intro-slide-1.jpg" alt="Picture of the author" width={1200} height={500} className='w-full' />
-          </AspectRatio>
-        </SwiperSlide>
-      </Swiper>
-    </>
-  );
-}
+//     gsap.to(slides, {
+//       xPercent: -100 * (slides.length - 1),
+//       ease: 'none',
+//       scrollTrigger: {
+//         trigger: sliderRef.current,
+//         pin: true,
+//         scrub: 1,
+//         snap: 1 / (slides.length - 1),
+//         end: () => '+=' + sliderRef.current.offsetWidth,
+//       },
+//     });
+//   }, []);
+
+//   return (
+//     <Box ref={sliderRef} className="w-screen h-screen overflow-hidden flex" bg="black">
+//       {/* 슬라이드 1 */}
+//       <Flex
+//         className="slide"
+//         bgImage="url('https://source.unsplash.com/random/1')"
+//         bgSize="cover"
+//         bgPosition="center"
+//         justify="center"
+//         align="center"
+//         flex="0 0 100vw"
+//       >
+//         <Heading color="white" fontSize="5xl" textAlign="center">
+//           NIVEA
+//         </Heading>
+//       </Flex>
+
+//       {/* 슬라이드 2 */}
+//       <Flex
+//         className="slide"
+//         bgImage="url('https://source.unsplash.com/random/2')"
+//         bgSize="cover"
+//         bgPosition="center"
+//         justify="center"
+//         align="center"
+//         flex="0 0 100vw"
+//       >
+//         <Heading color="white" fontSize="5xl" textAlign="center">
+//           Global Campaigns
+//         </Heading>
+//       </Flex>
+
+//       {/* 슬라이드 3 */}
+//       <Flex
+//         className="slide"
+//         bgImage="url('https://source.unsplash.com/random/3')"
+//         bgSize="cover"
+//         bgPosition="center"
+//         justify="center"
+//         align="center"
+//         flex="0 0 100vw"
+//       >
+//         <Heading color="white" fontSize="5xl" textAlign="center">
+//           Innovative & Creative
+//         </Heading>
+//       </Flex>
+//     </Box>
+//   );
+// };
+
+// export default Slide;
