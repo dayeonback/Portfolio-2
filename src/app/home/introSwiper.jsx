@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,69 +10,86 @@ const ScrollSlide = () => {
   const containerRef = useRef(null); // 슬라이드 컨테이너
   const slideRefs = useRef([]); // 슬라이드 박스들
 
-  // 이미지 배열 (각 이미지를 배열로 관리)
-  const images = [
-    'publicimagespatternmainItaly.jpg',
-    'publicimagespatternmainSingapore.jpg',
-    'publicimagespatternmainSwitzerland.jpg',
-    'publicimagespatternmainIceland.jpg',
-    'publicimagespatternmainIceland.jpg',
+  const slides = [
+    {
+      img: '/images/pattern/main/Iceland.jpg',
+      title: 'NIVEA',
+      description: 'Global campaign for NIVEA.',
+    },
+    {
+      img: '/images/pattern/main/Italy.jpg',
+      title: 'Innocent',
+      description: 'Campaign for Innocent.',
+    },
+    {
+      img: '/images/pattern/main/Switzerland.jpg',
+      title: 'Clam',
+      description: 'Creative work for Clam.',
+    },
+    {
+      img: '/images/pattern/main/Iceland.jpg',
+      title: 'LinkedIn',
+      description: 'Promoting LinkedIn globally.',
+    },
   ];
 
   useEffect(() => {
-    // 슬라이드 애니메이션 설정
+    // 가로 슬라이드 애니메이션 설정
     gsap.to(slideRefs.current, {
-      xPercent: -100 * (slideRefs.current.length - 1), // 슬라이드가 넘어가는 비율
+      xPercent: -100 * (slideRefs.current.length - 1), // 각 슬라이드가 화면 밖으로 나가도록 설정
+      ease: 'none', // 부드럽게 이동
       scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top top', // 시작 위치
-        end: `+=${containerRef.current.scrollHeight}`, // 끝 위치
-        scrub: true, // 스크롤에 따라 애니메이션이 매끄럽게 따라가도록 설정
-        pin: true, // 스크롤하면서 요소를 고정
-        markers: false,
+        trigger: containerRef.current, // 트리거로 슬라이드 컨테이너 사용
+        start: 'top top', // 스크롤 시작 위치
+        end: `+=${containerRef.current.offsetWidth}`, // 스크롤이 끝나는 위치
+        scrub: true, // 스크롤에 따라 애니메이션이 매끄럽게 동작
+        pin: true, // 스크롤 영역을 고정
+        anticipatePin: 1,
+        markers: false, // 디버그 마커 표시 안 함
       },
-    });
-
-    // 슬라이드의 양옆을 어둡게 처리하는 애니메이션
-    slideRefs.current.forEach((slide, index) => {
-      gsap.to(slide, {
-        scrollTrigger: {
-          trigger: slide,
-          start: 'top center', // 슬라이드가 화면 중앙에 올 때
-          end: 'bottom center',
-          scrub: true,
-        },
-        filter: index === 2 ? 'none' : 'brightness(50%)', // 가운데 슬라이드만 밝게
-      });
     });
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden flex items-center justify-center" ref={containerRef}>
-      <div
-        className="flex space-x-14" // 슬라이드 사이에 간격을 두기 위해 space-x-8을 사용
-        style={{ width: `${100 * images.length}%` }} // 이미지 개수에 맞게 슬라이드 너비 설정
+    <Box ref={containerRef} position="relative" w="100%" h="100vh" overflow="hidden">
+      <Box
+        display="flex"
+        width={`${slides.length * 100}vw`} // 각 슬라이드가 화면 너비를 차지하도록 설정
+        height="100%"
       >
-        {images.map((image, index) => (
-          <div
+        {slides.map((slide, index) => (
+          <Box
             key={index}
-            className="w-[60vw] h-[50vh] flex justify-center items-center"
-            style={{
-              borderRadius: '20px', // 모서리 둥글게 설정
-              boxShadow: '0 0 30px rgba(0, 0, 0, 0.5)', // 슬라이드에 어두운 음영
-              transition: 'filter 0.3s ease-in-out', // 슬라이드 밝기 변환에 애니메이션 추가
-            }}
             ref={(el) => (slideRefs.current[index] = el)}
+            flex="none" // 모든 박스가 동일한 너비를 차지하도록 설정
+            w="100vw" // 슬라이드 너비를 화면 너비로 설정
+            h="100vh"
+            position="relative"
+            overflow="hidden"
           >
-            <img
-              src={image}
-              alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover rounded-xl" // 이미지가 슬라이드를 꽉 채우도록 설정
-            />
-          </div>
+            {/* 이미지 */}
+            <Image src={slide.img} alt={slide.title} objectFit="cover" w="100%" h="100%" />
+            {/* 텍스트 오버레이 */}
+            <Box
+              position="absolute"
+              bottom="10%"
+              left="50%"
+              transform="translateX(-50%)"
+              zIndex={10}
+              textAlign="center"
+              color="white"
+            >
+              <Text fontSize="4xl" fontWeight="bold">
+                {slide.title}
+              </Text>
+              <Text fontSize="lg" mt={2}>
+                {slide.description}
+              </Text>
+            </Box>
+          </Box>
         ))}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
