@@ -6,9 +6,7 @@ import TextMotion from './textMotion';
 export default function Bento() {
   return (
     <section className="pt-20 lg:pt-32 block px-4 lg:px-8 opacity-100">
-      {/* 기존 내용 */}
       <TextMotion />
-      {/* 추가된 Clock과 CityText 섹션 */}
       <div className="w-full flex flex-col items-center justify-center relative bg-black text-white py-20">
         {/* Clock 컴포넌트 */}
         <div>

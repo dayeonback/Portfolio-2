@@ -17,12 +17,13 @@ const CityTextScroll = () => {
       // GSAP ScrollTrigger 애니메이션
       gsap.to(line, {
         x: direction,
+        duration: 3,
         scrollTrigger: {
           trigger: line, // 각 라인을 개별적으로 트리거
           start: 'top bottom', // 뷰포트에 라인이 들어오는 시점 (트리거 시작)
           end: 'top top', // 라인이 뷰포트를 지나갈 때
           end: '+=500', // 스크롤 길이 (길어질수록 느려짐)
-          scrub: 5, // 스크롤 동기화 및 부드러운 속도 조절
+          scrub: 5, // 스크롤 동기화 및 부드러운 속도 조절 (값을 더 낮게 하면 느리게)
         },
       });
     });
