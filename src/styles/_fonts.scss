@@ -3,6 +3,7 @@ $black: #000000 !default;
 
 // font-style
 $font-family-base: 'Pretendard', sans-serif !default;
+$font-family-point: 'Chosunilbo_myungjo', serif;
 $font-size-base: 17px !default;
 $font-color-base: #1d1d1d !default;
 $font-weight-base: 400 !default;
@@ -30,6 +31,13 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+@font-face {
+  font-family: 'Chosunilbo_myungjo';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {

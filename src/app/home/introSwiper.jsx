@@ -71,7 +71,6 @@ const ScrollSlide = () => {
             borderRadius="20px" // 모서리 둥글게 설정
             overflow="hidden"
             boxShadow="0px 4px 20px rgba(0, 0, 0, 0.3)" // 그림자 효과
-            bg="gray.800" // 배경색 설정
           >
             {/* 이미지 */}
             <Image src={slide.img} alt={slide.title} objectFit="cover" w="100%" h="100%" />

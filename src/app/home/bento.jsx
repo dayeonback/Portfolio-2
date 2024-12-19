@@ -15,7 +15,10 @@ export default function Bento() {
           <Clock />
         </div>
         {/* 스크롤 애니메이션 텍스트 */}
-        <div className="overflow-hidden h-[300px] lg:h-[400px] w-full">
+        <div
+          className="overflow-hidden 
+        w-full"
+        >
           <CityText />
         </div>
       </div>
