@@ -2,7 +2,7 @@ import React from 'react';
 
 const TextMotion = () => {
   return (
-    <div className="mb-16 lg:mb-20 w-full relative">
+    <div className="lg:mb-20 w-full relative">
       <div className="text-lg pl-[5rem] tracking-tight leading-4">
         <p className="text-xl">
           Every culture in the world has different stories and special charms. Bliss discovered cultures all over the
