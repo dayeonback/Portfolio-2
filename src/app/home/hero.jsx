@@ -16,7 +16,7 @@ export default function Hero() {
     <>
       <video
         src="/videos/header-video1-pc.5d9f90a5.mp4"
-        className="absolute top-0 left-0 w-full h-svh object-cover z-0"
+        className="absolute top-0 left-0 w-full h-[140vh] object-cover z-0"
         autoPlay
         muted
         loop
