@@ -41,7 +41,7 @@ const Clock = () => {
   }, []);
 
   return (
-    <div className="relative w-[100px] h-[100px] border-2 border-white rounded-full flex items-center justify-center">
+    <div className="relative w-[100px] h-[100px] border-2 border-white rounded-full flex items-center justify-center bg-black">
       {/* 시 바늘 */}
       <div ref={hourRef} className="absolute w-[2px] h-[25px] bg-white top-1/2 left-1/2 -ml-0.3"></div>
 
