@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Box, Text } from '@chakra-ui/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Clock from '@/components/ui/Clock';
 
 // GSAP 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);
@@ -31,6 +32,7 @@ const CityTextScroll = () => {
 
   return (
     <Box w="100%" overflow="hidden">
+      <Clock />
       {/* 텍스트 라인 */}
       {['LONDON', 'TAIPEI', 'LOS ANGELES', 'NEW YORK', 'JAPAN', 'AUSTRALIA', 'IRELAND'].map((city, index) => (
         <Text
