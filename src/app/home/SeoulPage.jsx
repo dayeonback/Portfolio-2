@@ -45,13 +45,13 @@ const Home = () => {
     });
   }, [currentTime]);
 
-  // 현재 날짜 포맷
+  // 현재 날짜
   const getFormattedDate = () => {
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     return currentTime.toLocaleDateString('en-US', options).toUpperCase();
   };
 
-  // 현재 시간 포맷
+  // 현재 시간
   const getFormattedTime = () => {
     return currentTime.toLocaleTimeString('en-US', { hour12: false });
   };
@@ -86,7 +86,7 @@ const Home = () => {
 
       {/* Content */}
       <Box position="absolute" top="0" left="0" w="100%" h="100%" zIndex="3">
-        {/* Header (Top Text) */}
+        {/* Top Text */}
         <Box position="absolute" top="15%" left="50%" transform="translateX(-50%)" textAlign="center" lineHeight="1.2">
           <Text fontSize="11rem" fontWeight="bold" color="white" fontFamily="Chosunilbo_myungjo" whiteSpace="nowrap">
             FINALLY, WE&#39;RE
@@ -110,7 +110,7 @@ const Home = () => {
             transform="translateX(-50%)"
             transformOrigin="50% 100%"
             borderRadius="50px"
-            boxShadow="0 0 15px rgba(0, 0, 0, 0.8)" // 검정 그림자
+            boxShadow="0 0 15px rgba(0, 0, 0, 0.8)"
           />
 
           {/* Minute Hand */}
@@ -125,7 +125,7 @@ const Home = () => {
             transform="translateX(-50%)"
             transformOrigin="50% 100%"
             borderRadius="50px"
-            boxShadow="0 0 15px rgba(0, 0, 0, 0.8)" // 검정 그림자
+            boxShadow="0 0 15px rgba(0, 0, 0, 0.8)"
           />
 
           {/* Second Hand */}
@@ -140,7 +140,7 @@ const Home = () => {
             transform="translateX(-50%)"
             transformOrigin="50% 100%"
             borderRadius="50px"
-            boxShadow="0 0 15px rgba(0, 0, 0, 0.8)" // 검정 그림자
+            boxShadow="0 0 15px rgba(0, 0, 0, 0.8)"
           />
 
           {/* Center Hands */}
@@ -154,11 +154,11 @@ const Home = () => {
             top="50%"
             left="50%"
             transform="translate(-50%, -50%)"
-            boxShadow="0 0 15px rgba(0, 0, 0, 0.8)" // 검정 그림자
+            boxShadow="0 0 15px rgba(0, 0, 0, 0.8)"
           />
         </Box>
 
-        {/* Date and Time (Bottom Text) */}
+        {/* Bottom Text */}
         <Box
           position="absolute"
           bottom="20%"
