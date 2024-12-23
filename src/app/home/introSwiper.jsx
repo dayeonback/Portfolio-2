@@ -41,7 +41,7 @@ const ScrollSlide = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top', // 시작 위치
-        end: `+=${containerRef.current.offsetWidth * slides.length}`, // 끝 위치
+        end: `+=${(containerRef.current.offsetWidth * slides.length) / 2}`, // 총 스크롤 거리 줄이기 끝 위치
         scrub: true, // 스크롤에 따라 애니메이션 동기화
         pin: true, // 스크롤 고정
         anticipatePin: 1,
@@ -55,7 +55,7 @@ const ScrollSlide = () => {
       <Box
         display="flex"
         width={`${slides.length * 70}vw`} // 간격 포함 전체 슬라이드 너비 계산
-        height="100%"
+        height="70%"
         gap="5vw" // 슬라이드 간격 추가
         justifyContent="center"
         alignItems="center"
@@ -66,7 +66,7 @@ const ScrollSlide = () => {
             ref={(el) => (slideRefs.current[index] = el)}
             flex="none"
             w="60vw" // 슬라이드 너비
-            h="50vh" // 슬라이드 높이
+            h={{ base: '40vh', md: '50vh', lg: '60vh' }}
             position="relative"
             borderRadius="20px" // 모서리 둥글게 설정
             overflow="hidden"
