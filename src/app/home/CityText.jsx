@@ -37,6 +37,7 @@ const CityTextScroll = () => {
           start: 'top bottom',
           end: 'top top',
           scrub: true, // 스크롤과 동기화
+          // markers: true,
         },
       });
     });
@@ -61,7 +62,7 @@ const CityTextScroll = () => {
     { top: '50%', left: '90%' },
     { top: '70%', left: '20%' },
     { top: '80%', left: '80%' },
-    { top: '100%', left: '50%' },
+    { top: '110%', left: '50%' },
   ];
 
   return (

@@ -54,7 +54,7 @@ const ScrollSlide = () => {
     <Box ref={containerRef} position="relative" w="100%" h="100vh" overflow="hidden">
       <Box
         display="flex"
-        width={`${slides.length * 70}vw`} // 간격 포함 전체 슬라이드 너비 계산
+        width={`${slides.length * 100}vh`} // 간격 포함 전체 슬라이드 너비 계산
         height="70%"
         gap="5vw" // 슬라이드 간격 추가
         justifyContent="center"
@@ -65,8 +65,8 @@ const ScrollSlide = () => {
             key={index}
             ref={(el) => (slideRefs.current[index] = el)}
             flex="none"
-            w="60vw" // 슬라이드 너비
-            h={{ base: '40vh', md: '50vh', lg: '60vh' }}
+            w={{ base: '30vh', md: '40vh', lg: '50vh' }} // 슬라이드 너비
+            h={{ base: '60vh', md: '70vh', lg: '80vh' }}
             position="relative"
             borderRadius="20px" // 모서리 둥글게 설정
             overflow="hidden"

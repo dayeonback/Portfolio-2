@@ -1,9 +1,6 @@
 import React from 'react';
 import IntroSwiper from './introSwiper';
 import News from './news';
-import { mockNews } from '@/data/newsData';
-import Link from 'next/link';
-import Image from 'next/image';
 import Hero from './hero';
 import Bento from './bento';
 import SeoulPage from './SeoulPage';
@@ -15,7 +12,7 @@ const Home = () => {
       <IntroSwiper />
       <Bento />
       <SeoulPage />
-      <News mockNews={mockNews} title="뉴스" />
+      <News />
     </>
   );
 };
