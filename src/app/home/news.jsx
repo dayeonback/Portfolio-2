@@ -11,25 +11,23 @@ export default function Hero() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.hero-section', // 스크롤 트리거 대상
-        start: 'top top', // 트리거 시작 위치
-        end: '+=150%', // 트리거 종료 위치
+        start: 'top bottom', // 트리거 시작 위치: 화면 하단에서 시작
+        end: '+=100%', // 트리거 종료 위치: 스크롤 100%까지
         scrub: 1, // 스크롤에 따라 애니메이션 동기화
         pin: true, // 섹션 고정
       },
     });
 
-    // 원 확장 및 이동 애니메이션
+    // 원 확장 애니메이션
     tl.fromTo(
       '.circle',
       {
-        scale: 0.2, // 초기 크기
-        x: '-50%', // X축 초기 위치
-        y: '-50%', // Y축 중앙에서 시작
+        scale: 0.2, // 초기 크기 (작게 보이는 상태)
+        x: '-50%', // X축 중앙 위치
+        y: '-50%', // Y축 중앙 위치
       },
       {
-        scale: 10, // 최종 크기
-        x: '-50%', // X축 중앙 고정
-        y: '-50%', // Y축 중앙 고정
+        scale: 3, // 원이 커지는 크기
         duration: 1.5,
         ease: 'power2.out',
       }
@@ -50,11 +48,11 @@ export default function Hero() {
       <Box
         className="circle"
         position="absolute"
-        top="0"
+        top="50%" // 화면 중앙에서 시작
         left="50%"
-        transform="translate(-50%, -50%)" // 화면 중앙에서 시작
-        w="50vmin"
-        h="50vmin"
+        transform="translate(-50%, -50%)" // 화면 중앙에 배치
+        w="50vmin" // 초기 크기 (작게 시작)
+        h="50vmin" // 초기 크기 (작게 시작)
         bg="red"
         borderRadius="full"
         zIndex={0}
@@ -65,13 +63,13 @@ export default function Hero() {
         className="text"
         fontSize="8rem"
         fontWeight="bold"
-        color="black"
+        color="white" // 텍스트 색상 변경
         textAlign="center"
         position="relative"
         zIndex={1}
         opacity={0} // 초기 상태
       >
-        Bliss
+        CYLNR
       </Text>
     </Box>
   );
