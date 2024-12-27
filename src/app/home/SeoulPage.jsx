@@ -88,10 +88,21 @@ const Home = () => {
       <Box position="absolute" top="0" left="0" w="100%" h="100%" zIndex="3">
         {/* Top Text */}
         <Box position="absolute" top="15%" left="50%" transform="translateX(-50%)" textAlign="center" lineHeight="1.2">
-          <Text fontSize="11rem" fontWeight="bold" color="white" fontFamily="Chosunilbo_myungjo" whiteSpace="nowrap">
+          <Text
+            fontSize={['4rem', '5rem', '7rem', '9rem', '11rem']}
+            fontWeight="bold"
+            color="white"
+            fontFamily="Chosunilbo_myungjo"
+            whiteSpace="nowrap"
+          >
             FINALLY, WE&#39;RE
           </Text>
-          <Text fontSize="10rem" color="#08fc96" fontWeight="bold" whiteSpace="nowrap">
+          <Text
+            fontSize={['3rem', '4rem', '6rem', '8rem', '10rem']}
+            color="#08fc96"
+            fontWeight="bold"
+            whiteSpace="nowrap"
+          >
             IN SEOUL
           </Text>
         </Box>
@@ -118,7 +129,7 @@ const Home = () => {
             ref={minuteRef}
             w="1.5%"
             h="80%"
-            bg="gray.300"
+            bg="white"
             position="absolute"
             top="-30%"
             left="50%"
@@ -167,10 +178,15 @@ const Home = () => {
           textAlign="center"
           lineHeight="1.2"
         >
-          <Text fontSize="11rem" color="white" fontFamily="Chosunilbo_myungjo" whiteSpace="nowrap">
+          <Text
+            fontSize={['4rem', '5rem', '7rem', '9rem', '11rem']}
+            color="white"
+            fontFamily="Chosunilbo_myungjo"
+            whiteSpace="nowrap"
+          >
             {getFormattedDate()}
           </Text>
-          <Text fontSize="10rem" color="white" fontWeight="bold">
+          <Text fontSize={['3rem', '4rem', '6rem', '8rem', '10rem']} color="white" fontWeight="bold">
             {getFormattedTime()}
           </Text>
         </Box>

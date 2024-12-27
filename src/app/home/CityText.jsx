@@ -46,9 +46,10 @@ const CityTextScroll = () => {
   // 각 도시의 시간대 정보
   const cityTimeZones = {
     LONDON: 'Europe/London',
-    TAIPEI: 'Asia/Taipei',
     'LOS ANGELES': 'America/Los_Angeles',
+
     'NEW YORK': 'America/New_York',
+    TAIPEI: 'Asia/Taipei',
     JAPAN: 'Asia/Tokyo',
     AUSTRALIA: 'Australia/Sydney',
     IRELAND: 'Europe/Dublin',
@@ -68,12 +69,12 @@ const CityTextScroll = () => {
   return (
     <Box w="100%" h="100vh" overflow="visible" position="relative">
       {/* 텍스트 라인 */}
-      {['LONDON', 'TAIPEI', 'LOS ANGELES', 'NEW YORK', 'JAPAN', 'AUSTRALIA', 'IRELAND'].map((city, index) => (
+      {['LONDON', 'LOS ANGELES', 'NEW YORK', 'TAIPEI', 'JAPAN', 'AUSTRALIA', 'IRELAND'].map((city, index) => (
         <Text
           key={index}
           ref={(el) => (lineRefs.current[index] = el)}
           fontFamily="Chosunilbo_myungjo"
-          fontSize="9rem"
+          fontSize={['8rem', '9rem', '11rem', '13rem', '15rem']}
           fontWeight="light"
           textAlign="center"
           whiteSpace="nowrap"
@@ -93,6 +94,13 @@ const CityTextScroll = () => {
           top={pos.top}
           left={pos.left}
           transform="translate(-50%, -50%)"
+          width={['50px', '70px', '90px', '110px', '130px']} // 반응형 너비
+          height={['50px', '70px', '90px', '110px', '130px']} // 반응형 높이
+          fontWeight="light"
+          textAlign="center"
+          whiteSpace="nowrap"
+          lineHeight="1"
+          marginBottom={['-10px', '-15px', '-20px', '-25px', '-30px']} // 반응형 여백
         >
           <Clock timezone={cityTimeZones[Object.keys(cityTimeZones)[index]]} />
         </Box>
