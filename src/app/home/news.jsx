@@ -11,39 +11,51 @@ const CircleTextScroll = () => {
   const textRef = useRef();
 
   useEffect(() => {
-    // 원의 크기 확대 애니메이션 (속도 조절)
+    // 원의 크기 확대 애니메이션
     gsap.to(circleRef.current, {
-      scale: 20, // 원이 커지는 비율
-      duration: 8, // duration을 늘려서 애니메이션을 느리게 만듦
+      scale: 20,
+      duration: 8,
       ease: 'power2.inOut',
       scrollTrigger: {
         trigger: circleRef.current,
-        start: 'top 80%', // 원이 화면의 80%에 도달하면 애니메이션 시작
-        end: 'top 20%', // 끝나는 시점은 화면의 20%에 해당
-        scrub: 1, // 스크롤과 동기화
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: 1,
       },
     });
 
-    // 텍스트 슬라이드 애니메이션 (속도 조절)
+    // 텍스트 슬라이드 애니메이션
     gsap.fromTo(
       textRef.current,
       {
-        x: '200%', // 초기 위치는 오른쪽 끝
-        opacity: 0, // 시작할 때 텍스트는 보이지 않음
+        x: '200%',
+        opacity: 0,
       },
       {
-        x: '0%', // 최종 위치는 화면 중앙으로 이동 (원래는 '50%'였으나 더 중앙에 배치)
-        opacity: 1, // 텍스트가 보이도록
-        duration: 8, // duration을 늘려서 애니메이션을 느리게 만듦
+        x: '0%',
+        opacity: 1,
+        duration: 8,
         ease: 'power2.inOut',
         scrollTrigger: {
           trigger: circleRef.current,
-          start: 'top 80%', // 원이 커지면서 텍스트가 이동 시작
-          end: 'top 20%', // 끝나는 시점
-          scrub: 1, // 스크롤과 동기화
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: 1,
         },
       }
     );
+
+    // 'Bliss.' 텍스트가 화면 중앙에 도달한 후, 스크롤을 내리면 'lis'와 '.' 흐려지는 속도 조정
+    gsap.to('.lis, .dot', {
+      opacity: 0.001, // 거의 투명
+      duration: 100, // 아주 긴 시간
+      scrollTrigger: {
+        trigger: textRef.current,
+        start: 'top 50%', // 텍스트가 화면 중앙에 도달하면 시작
+        end: '+=3000', // 더 긴 스크롤 거리
+        scrub: 15, // 느린 스크롤 동기화
+      },
+    });
   }, []);
 
   return (
@@ -56,9 +68,12 @@ const CircleTextScroll = () => {
         {/* 원 안의 텍스트 */}
         <Text
           ref={textRef}
-          className="text-white text-2xl font-bold whitespace-nowrap opacity-100 absolute left-1/2 transform -translate-x-1/2"
+          className="text-black text-2xl font-bold whitespace-nowrap opacity-100 absolute left-1/2 transform -translate-x-1/2"
         >
-          Bliss
+          <span>B</span>
+          <span className="lis">lis</span>
+          <span>s</span>
+          <span className="dot">.</span>
         </Text>
       </Box>
     </Box>
