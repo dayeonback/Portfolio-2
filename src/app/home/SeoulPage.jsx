@@ -89,7 +89,7 @@ const Home = () => {
         {/* Top Text */}
         <Box position="absolute" top="15%" left="50%" transform="translateX(-50%)" textAlign="center" lineHeight="1.2">
           <Text
-            fontSize={['4rem', '5rem', '7rem', '9rem', '11rem']}
+            fontSize={['3rem', '4rem', '6rem', '8rem', '11rem']}
             fontWeight="bold"
             color="white"
             fontFamily="Chosunilbo_myungjo"

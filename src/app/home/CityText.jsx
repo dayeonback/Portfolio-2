@@ -59,10 +59,10 @@ const CityTextScroll = () => {
   const clockPositions = [
     { top: '5%', left: '25%' },
     { top: '20%', left: '70%' },
-    { top: '30%', left: '10%' },
-    { top: '50%', left: '90%' },
-    { top: '70%', left: '20%' },
-    { top: '80%', left: '80%' },
+    { top: '40%', left: '10%' },
+    { top: '60%', left: '90%' },
+    { top: '80%', left: '20%' },
+    { top: '90%', left: '80%' },
     { top: '110%', left: '50%' },
   ];
 
@@ -79,7 +79,7 @@ const CityTextScroll = () => {
           textAlign="center"
           whiteSpace="nowrap"
           lineHeight="1"
-          marginBottom="-20px"
+          mb={['-5%', '-4%', '-3%', '-2%']} // 퍼센트 기반 여백
         >
           {city}
         </Text>
@@ -94,13 +94,13 @@ const CityTextScroll = () => {
           top={pos.top}
           left={pos.left}
           transform="translate(-50%, -50%)"
-          width={['50px', '70px', '90px', '110px', '130px']} // 반응형 너비
-          height={['50px', '70px', '90px', '110px', '130px']} // 반응형 높이
+          width={['8%', '7%', '6%', '5%']} // 퍼센트 기반 너비
+          height={['8%', '7%', '6%', '5%']} // 퍼센트 기반 높이
           fontWeight="light"
           textAlign="center"
           whiteSpace="nowrap"
           lineHeight="1"
-          marginBottom={['-10px', '-15px', '-20px', '-25px', '-30px']} // 반응형 여백
+          mb={['-2%', '-1.5%', '-1%', '-0.5%']} // 퍼센트 기반 여백
         >
           <Clock timezone={cityTimeZones[Object.keys(cityTimeZones)[index]]} />
         </Box>
