@@ -4,6 +4,7 @@ import News from './news';
 import Hero from './hero';
 import Bento from './bento';
 import SeoulPage from './SeoulPage';
+import Information from './Information';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <IntroSwiper />
       <Bento />
       <SeoulPage />
+      <Information />
       <News />
     </>
   );

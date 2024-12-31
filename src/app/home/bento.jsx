@@ -1,4 +1,4 @@
-import CityText from '@/app/home/CityText'; // CityText 컴포넌트 경로
+import CityText from '@/app/home/CityText';
 import TextMotion from './textMotion';
 
 export default function Bento() {
