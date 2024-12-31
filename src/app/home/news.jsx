@@ -10,6 +10,7 @@ const CircleTextScroll = () => {
   const circleRef = useRef();
   const textRef = useRef();
   const newTextRef = useRef();
+  const blissTextRef = useRef(); // Bliss 텍스트를 위한 ref 추가
 
   useEffect(() => {
     // 원의 크기 확대 애니메이션
@@ -48,8 +49,8 @@ const CircleTextScroll = () => {
 
     // 기존 텍스트가 흐려지는 애니메이션
     gsap.to('.lis, .dot', {
-      opacity: 0.1, // 거의 투명
-      duration: 5, // 천천히 흐려짐
+      opacity: 0.05, // 거의 투명
+      duration: 15, // 천천히 흐려짐
       scrollTrigger: {
         trigger: textRef.current,
         start: 'top 50%', // 기존 텍스트가 화면 중앙에 도달하면 시작
@@ -72,6 +73,24 @@ const CircleTextScroll = () => {
           start: '+=1500', // 기존 텍스트가 흐려지고 추가 스크롤 후 시작
           end: '+=500', // 뉴 텍스트 나타나는 거리
           scrub: true,
+        },
+      }
+    );
+
+    // Bliss 텍스트 오른쪽에서 왼쪽으로 이동하는 애니메이션
+    gsap.fromTo(
+      blissTextRef.current,
+      { x: '200%', opacity: 1 }, // 초기 상태: 오른쪽 끝에서 시작
+      {
+        x: '0%', // 왼쪽으로 이동
+        opacity: 1, // 투명도 유지
+        duration: 8,
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: circleRef.current,
+          start: 'top 80%', // 원이 확대되기 시작할 때
+          end: 'top 20%', // 원이 확대되기 끝날 때
+          scrub: 1,
         },
       }
     );
@@ -101,6 +120,17 @@ const CircleTextScroll = () => {
           className="text-black text-2xl font-bold whitespace-nowrap opacity-0 absolute left-1/2 transform -translate-x-1/2 z-20"
         >
           <p>New</p>
+        </Text>
+
+        {/* Bliss 텍스트는 원과 동시에 확대되지 않으며 오른쪽에서 왼쪽으로 이동 */}
+        <Text
+          ref={blissTextRef}
+          className="text-black text-2xl font-bold whitespace-nowrap opacity-100 absolute left-1/2 transform -translate-x-1/2 z-10"
+        >
+          <span>B</span>
+          <span className="lis">lis</span>
+          <span>s</span>
+          <span className="dot">.</span>
         </Text>
       </Box>
     </Box>
