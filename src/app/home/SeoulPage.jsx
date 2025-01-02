@@ -4,21 +4,10 @@ import { gsap } from 'gsap';
 
 const Home = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); // 현재 이미지 인덱스를 관리
   const hourRef = useRef(null);
   const minuteRef = useRef(null);
   const secondRef = useRef(null);
   const centerRef = useRef(null);
-  const imageRef = useRef(null);
-
-  // 여러 이미지들을 배열에 정의
-  const mockImages = [
-    '/images/pattern/main/seoul.jpg',
-    '/images/pattern/main/seoul2.jpg',
-    '/images/pattern/main/seoul3.jpg',
-    '/images/pattern/main/seoul4.jpg',
-    '/images/pattern/main/seoul5.jpg',
-  ];
 
   // 업데이트되는 현재 시간
   useEffect(() => {
@@ -56,22 +45,6 @@ const Home = () => {
     });
   }, [currentTime]);
 
-  // 이미지 변경을 위한 ScrollTrigger
-  useEffect(() => {
-    gsap.to(imageRef.current, {
-      scrollTrigger: {
-        trigger: imageRef.current,
-        start: 'top center',
-        end: 'bottom center',
-        scrub: true,
-        onUpdate: (self) => {
-          const index = Math.floor(self.progress * (mockImages.length - 1));
-          setCurrentImageIndex(index); // 스크롤 진행 정도에 따라 이미지 인덱스 업데이트
-        },
-      },
-    });
-  }, []);
-
   // 현재 날짜
   const getFormattedDate = () => {
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
@@ -87,8 +60,7 @@ const Home = () => {
     <Box w="100%" h="240vh" bg="black" position="relative" overflow="hidden">
       {/* Background Image */}
       <Image
-        ref={imageRef}
-        src={mockImages[currentImageIndex]} // currentImageIndex에 따라 이미지 변경
+        src="/images/pattern/main/seoul.jpg"
         alt="Seoul"
         objectFit="contain"
         w="40%"
