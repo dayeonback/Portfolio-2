@@ -15,43 +15,64 @@ const Information = () => {
       {
         opacity: 1,
         y: 0,
-        duration: 2,
-        stagger: 0.2,
-        ease: 'power3.out',
+        duration: 3,
+        stagger: 0.5,
+        ease: 'power4.out',
         scrollTrigger: {
           trigger: '.planning-group',
-          start: 'top 70%',
+          start: 'top 100%',
           end: 'bottom 30%',
           toggleActions: 'play reverse play reverse',
-          scrub: 1,
+          scrub: 0.5,
+          // markers: true,
         },
       }
     );
   }, []);
 
   return (
-    <Box className="planning-group" bg="black" py={16} px={[4, 8, 16]} textAlign="center" color="white">
+    <Box
+      className="planning-group"
+      bg="black"
+      py={64}
+      px={[4, 8, 64]} // 기본 좌우 여백을 4에서 16으로 점진적으로 증가
+      textAlign="center"
+      color="white"
+    >
       {/* Flexbox로 제목과 콘텐츠를 나누어 배치 */}
-      <Flex direction="column" gap={8}>
+      <Flex direction="column" gap={32}>
         {/* 반복되는 제목과 콘텐츠를 섹션으로 배치 */}
         {mockInformation.map((item) => (
-          <Flex key={item.id} direction={['column', 'row']} align="center" justify="space-between" gap={8} mb={8}>
+          <Flex
+            key={item.id}
+            direction={['column', 'row']}
+            align={['flex-start', 'flex-start']} // 왼쪽 정렬을 맞추기 위해 flex-start 설정
+            justify="space-between"
+            gap={40}
+            mb={8}
+          >
             {/* 왼쪽 제목 */}
-            <Box flex="1" textAlign={['center', 'left']} mb={8}>
-              <Text className="planning-item" fontSize="4xl" fontWeight="bold" mb={4} color="white">
+            <Box
+              flex="1"
+              textAlign={['center', 'left']}
+              mb={8}
+              display="flex"
+              alignItems="flex-start" // 제목을 첫 번째 텍스트와 맞추기 위해 alignItems 수정
+            >
+              <Text className="planning-item" fontSize="5xl" fontWeight="bold" mb={4} color="white">
                 {item.title}
               </Text>
             </Box>
 
             {/* 오른쪽 내용 */}
             <Box flex="2" textAlign="left">
-              <Text className="planning-item" fontSize="lg" color="gray.300" mb={4}>
+              <Text className="planning-item" fontSize="3xl" fontWeight="semibold" mb={8}>
                 {item.subtitle}
               </Text>
-              <Text className="planning-item" fontSize="2xl" fontWeight="semibold" mb={4} color="white">
+              <Text className="planning-item" fontSize="2xl" mb={8} color="white">
                 {item.description}
               </Text>
-              <Text className="planning-item" color="gray.300" lineHeight="1.8" mb={8}>
+              <Text className="planning-item" color="gray.200" lineHeight="1.8" mb={8}>
                 {item.koreanDescription}
               </Text>
             </Box>

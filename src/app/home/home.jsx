@@ -5,6 +5,7 @@ import Hero from './hero';
 import Bento from './bento';
 import SeoulPage from './SeoulPage';
 import Information from './Information';
+import Horizontalscrolling from './Horizontalscrolling';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <SeoulPage />
       <Information />
       <News />
+      <Horizontalscrolling />
     </>
   );
 };
